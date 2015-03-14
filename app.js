@@ -1,4 +1,4 @@
-angular.module('instaSearcher',[])
+angular.module('instaSearcher',['ngAnimate'])
 	.controller('photoCtrl',['$scope','$http', function($scope,$http){
 		$scope.searchPhotos = function() {
      	 var url = 'https://api.instagram.com/v1/tags/'+$scope.searchTag+'/media/recent';

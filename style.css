@@ -35,17 +35,22 @@
   height: 150px;
   width: 150px;
   margin: 5px;
-  margin-left: 5px;
   text-align: center;
 }
 
-.animate-enter {
-  -webkit-transition: all linear 1s;
-  transition: all linear 1s;
-  opacity: 0;
+.flex-item.ng-enter {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+  margin-left: 9000px;
 }
 
-.animate-enter.animate-enter.active {
-  opacity: 1;
+.flex-item.ng-enter.ng-enter-active {
+  margin-left: 5px;
 }
+
+.flex-item.ng-enter-stagger {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
 

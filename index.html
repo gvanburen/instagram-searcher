@@ -23,7 +23,7 @@
 		</section>
 	</section>
 	<div class="flex-container">
-    	<div class="flex-item" ng-repeat="result in results.data" ng-animate="'animate'">
+    	<div class="flex-item" ng-repeat="result in results.data" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
       		<a ng-href="{{ result.link }}" target="_blank"><img ng-src="{{ result.images.thumbnail.url }}"></a>
     	</div>
   	</div>
