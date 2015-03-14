@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="instaSearcher">
+<head>
+	<meta charset="UTF-8">
+	<title>Instagram Searcher</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="appTitle">
+	<img src="ng-instagram.png">
+</section>
+<section ng-app="instaSearcher" ng-controller="photoCtrl">
+	<form name="tagSearcher" class="tagSearcher" novalidate>
+		<input type="text" ng-model="searchTag" required>
+		<button type="submit" ng-disabled="tagSearcher.$invalid" ng-click="searchPhotos()">Submit</button>
+	</form>
+	<section class="message">
+		<section ng-show="successfulSearch"> 
+			<p>We found {{ results.data.length }} results for <span>{{ keyword }}<span></p>
+		</section>
+		<section ng-show="failedSearch">
+			<p>Something went wrong, try your search again.</p>
+		</section>
+	</section>
+	<div class="flex-container">
+    	<div class="flex-item" ng-repeat="result in results.data" ng-animate="'animate'">
+      		<a ng-href="{{ result.link }}" target="_blank"><img ng-src="{{ result.images.thumbnail.url }}"></a>
+    	</div>
+  	</div>
+</section>
+	<script src="angular.min.js"></script>
+	<script src="angular-animate.min.js"></script>
+	<script src="app.js"></script>	
+</body>
+</html>
